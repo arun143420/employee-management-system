@@ -1,0 +1,248 @@
+.form-container {
+  padding: 0.5rem !important;
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.form-field input,
+.form-field ::ng-deep .p-dropdown,
+.form-field ::ng-deep .p-calendar {
+  width: 100%;
+}
+
+.form-field ::ng-deep .p-dropdown {
+  height: 2.5rem;
+}
+
+.form-field ::ng-deep .p-calendar {
+  height: 2.5rem;
+}
+
+.form-field ::ng-deep .p-calendar .p-inputtext {
+  width: 100%;
+  height: 2.5rem;
+}
+
+.form-field small {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-actions button {
+  min-width: 100px;
+}
+
+/* Calendar Header Styles */
+.calendar-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--surface-section);
+  justify-content: start;
+}
+
+.calendar-header .p-button {
+  flex: 1;
+  min-width: 0;
+  height: 2.5rem !important;
+  min-height: 2.5rem !important;
+  max-height: 2.5rem !important;
+}
+
+.calendar-header .p-button.p-button-text,
+.calendar-header .p-button.p-button-primary {
+  padding: 0.5rem !important;
+  margin: 0 !important;
+  font-size: 0.875rem !important;
+  line-height: 1 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.calendar-header .p-button .p-button-label {
+  flex: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal;
+}
+
+/* Style for No Date option */
+.calendar-header .p-button:first-child {
+  border: 1px solid var(--surface-border);
+}
+
+.calendar-header .p-button:first-child.p-button-primary {
+  border-color: var(--primary-color);
+}
+
+/* Calendar Footer Styles */
+::ng-deep .calendar-footer {
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+::ng-deep .calendar-footer .selected-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+  font-size: 0.875rem;
+}
+
+::ng-deep .calendar-footer .selected-date i {
+  color: #3b82f6;
+}
+
+::ng-deep .calendar-footer .footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: -2rem;
+}
+
+::ng-deep .calendar-footer .p-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+::ng-deep .calendar-footer .p-button.p-button-text {
+  color: #64748b;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+::ng-deep .calendar-footer .p-button.p-button-text:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Error states */
+.p-invalid {
+  border-color: #ef4444 !important;
+}
+
+.p-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+}
+
+/* Hover and focus states */
+.form-field ::ng-deep .p-inputtext:enabled:hover,
+.form-field ::ng-deep .p-dropdown:not(.p-disabled).p-focus,
+.form-field ::ng-deep .p-calendar:not(.p-disabled).p-focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.today-date {
+  position: relative;
+}
+
+.today-date::before {
+  content: "Today";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  right: 45px;
+  z-index: 2;
+  background-color: white;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+  pointer-events: none;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.today-date ::ng-deep .p-calendar {
+  position: relative;
+  z-index: 1;
+}
+
+.today-date ::ng-deep .p-inputtext {
+  color: transparent !important;
+}
+
+.today-date:hover ::ng-deep .p-inputtext {
+  border-color: #40a9ff;
+}
+
+.today-date:focus-within ::ng-deep .p-inputtext {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.no-date {
+  position: relative;
+}
+
+.no-date::before {
+  content: "No date";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  right: 45px;
+  z-index: 2;
+  background-color: white;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+  pointer-events: none;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.no-date ::ng-deep .p-calendar {
+  position: relative;
+  z-index: 1;
+}
+
+.no-date ::ng-deep .p-inputtext {
+  color: transparent !important;
+}
+
+.no-date:hover ::ng-deep .p-inputtext {
+  border-color: #40a9ff;
+}
+
+.no-date:focus-within ::ng-deep .p-inputtext {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+
+@media (max-width: 768px) {
+  .calendar-header {
+    justify-content: space-between;
+  }
+}
+

@@ -1,0 +1,554 @@
+:host {
+  display: block;
+  width: 100%;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Page Header Styles */
+.page-header {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.page-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.title-section .subtitle {
+  margin: 0.5rem 0 0;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+
+.tables-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.table-wrapper {
+  height: 100%;
+}
+
+.table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  overflow: hidden;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  background: #e0e7ff;
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+.header-text h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.refresh-button {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.refresh-button:hover {
+  color: #3b82f6;
+}
+
+.table-card ::ng-deep .p-datatable {
+  font-size: 0.9rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-card ::ng-deep .p-datatable .p-datatable-wrapper {
+  flex: 1;
+}
+
+.table-card ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  background: #f8f9fa;
+  color: #64748b;
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 2px solid #e9ecef;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.table-card ::ng-deep .p-datatable .p-datatable-thead > tr > th i {
+  margin-right: 0.5rem;
+  color: #3b82f6;
+}
+
+.table-card ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  color: #1e293b;
+}
+
+.table-card ::ng-deep .p-datatable .p-datatable-tbody > tr:hover {
+  background-color: #f8fafc;
+}
+
+.employee-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.status-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.status-tag i {
+  font-size: 0.875rem;
+}
+
+.empty-state {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.table-card ::ng-deep .p-paginator {
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  padding: 1rem;
+}
+
+.table-card ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #3b82f6;
+  color: white;
+}
+
+.table-card ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.table-card ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background: #e0e7ff;
+  color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .tables-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+.employee-name {
+  cursor: pointer;
+  color: #1890ff;
+  transition: color 0.2s;
+}
+
+.employee-name:hover {
+  color: #40a9ff;
+  text-decoration: underline;
+}
+
+.employee-row {
+  transition: all 0.3s ease;
+}
+
+.employee-row:hover {
+  background-color: #f8f9fa;
+}
+
+.delete-icon-wrapper {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+tr:hover .delete-icon-wrapper {
+  opacity: 1;
+}
+
+.delete-icon {
+  color: #dc3545;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.delete-icon:hover {
+  background-color: #fde8e8;
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+/* Animation classes */
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+/* Mobile floating action button - Base styles */
+.mobile-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: none; /* Hidden by default on desktop */
+  width: 3.5rem;
+  height: 3.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .page-header {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-header .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .page-header .header-content button {
+    display: none; /* Hide top button on mobile */
+  }
+
+  .mobile-fab {
+    display: flex; /* Show FAB on mobile */
+  }
+
+  .title-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .tables-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .table-card {
+    border-radius: 8px;
+  }
+
+  .card-header {
+    padding: 1rem;
+  }
+
+  .header-icon {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+  }
+
+  .header-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .table-card ::ng-deep .p-datatable .p-datatable-thead > tr > th,
+  .table-card ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .employee-info {
+    gap: 0.5rem;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  /* Dialog styles for mobile */
+  ::ng-deep .p-dialog {
+    width: 90vw !important;
+    max-width: none !important;
+    margin: 0.5rem !important;
+  }
+
+  ::ng-deep .p-dialog .p-dialog-content {
+    padding: 1rem !important;
+  }
+
+  /* Adjust table view for mobile */
+  .table-card ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    font-size: 0.875rem;
+  }
+
+  .table-card ::ng-deep .p-paginator {
+    padding: 0.5rem;
+  }
+
+  .table-card ::ng-deep .p-paginator .p-paginator-current {
+    display: none;
+  }
+
+  /* Hide table headers on mobile */
+  .table-card ::ng-deep .p-datatable .p-datatable-thead {
+    display: none;
+  }
+
+  /* Convert table rows to grid cards */
+  .table-card ::ng-deep .p-datatable .p-datatable-tbody > tr {
+    display: block;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+  }
+
+  .table-card ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    display: block;
+    padding: 0.75rem 1rem;
+    border: none;
+    text-align: left;
+  }
+
+  /* Style the name cell differently */
+  .table-card ::ng-deep .p-datatable .p-datatable-tbody > tr > td.name-cell {
+    background: #f8fafc;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  /* Add labels for mobile view */
+  .mobile-label {
+    display: none;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Adjust employee info for mobile */
+  .employee-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .employee-info-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Adjust delete icon for mobile */
+  .delete-icon-wrapper {
+    opacity: 1;
+    margin-left: auto;
+  }
+
+  .delete-icon {
+    color: #dc3545;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  /* Grid container for mobile */
+  .mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  /* Adjust paginator for mobile */
+  .table-card ::ng-deep .p-paginator {
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-label {
+        display: block;
+    }
+
+    .p-datatable .p-datatable-thead {
+        display: none;
+    }
+
+    .p-datatable .p-datatable-tbody > tr {
+        display: block;
+        margin-bottom: 1rem;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 1rem;
+    }
+
+    .p-datatable .p-datatable-tbody > tr > td {
+        display: block;
+        text-align: left;
+        border: none;
+        width: 100% !important;
+        padding: 0.5rem 0;
+    }
+
+    .p-datatable .p-datatable-tbody > tr > td:not(:last-child) {
+        border-bottom: 1px solid #f2f2f2;
+        margin-bottom: 0.5rem;
+    }
+
+    .p-datatable .p-datatable-tbody > tr > td.name-cell {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .employee-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .employee-info-left {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .employee-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .delete-icon-wrapper {
+        margin-left: auto;
+    }
+
+    .delete-icon {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    .p-paginator {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}

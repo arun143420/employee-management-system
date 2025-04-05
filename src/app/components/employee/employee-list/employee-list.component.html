@@ -1,0 +1,171 @@
+<div class="container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <div class="title-section">
+                <h1>Employee Management</h1>
+                <p class="subtitle">Manage your team members efficiently</p>
+            </div>
+            <button pButton pRipple label="Add Employee" icon="pi pi-plus" class="p-button-primary"
+                (click)="openAddEmployeeDialog()"></button>
+        </div>
+    </div>
+
+    <div class="tables-container">
+        <!-- Current Employees Table -->
+        <div class="table-wrapper">
+            <p-card class="table-card">
+                <div class="card-header">
+                    <div class="header-content">
+                        <i class="pi pi-users header-icon"></i>
+                        <div class="header-text">
+                            <h2>Current Employees</h2>
+                            <p class="subtitle">Active team members</p>
+                        </div>
+                    </div>
+                    <!-- <p-button icon="pi pi-refresh" (click)="loadEmployees()" [loading]="loading"
+                        class="refresh-button"></p-button> -->
+                </div>
+                <p-table [value]="currentEmployees" [loading]="loading" [paginator]="true" [rows]="5"
+                    styleClass="p-datatable-striped p-datatable-sm" [showCurrentPageReport]="true"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th class="name-column">
+                                <i class="pi pi-user"></i>
+                                Name
+                            </th>
+                            <th class="role-column">
+                                <i class="pi pi-briefcase"></i>
+                                Role
+                            </th>
+                            <th class="date-column">
+                                <i class="pi pi-calendar"></i>
+                                From
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-employee>
+                        <tr>
+                            <td class="name-cell">
+                                <div class="employee-info">
+                                    <div class="employee-info-left">
+                                        <!-- <div class="avatar">{{ employee.name.charAt(0) }}</div> -->
+                                        <span class="employee-name" (click)="onEditEmployee(employee)">{{ employee.name }}</span>
+                                    </div>
+                                    <div class="delete-icon-wrapper">
+                                        <i class="pi pi-trash delete-icon" (click)="onDeleteEmployee(employee)"></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="mobile-label">Role</span>
+                                {{ employee.role }}
+                            </td>
+                            <td>
+                                <span class="mobile-label">Start Date</span>
+                                {{ employee.startDate | date:'mediumDate' }}
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="4" class="text-center">
+                                <div class="empty-state">
+                                    <i class="pi pi-users empty-icon"></i>
+                                    <p>No current employees found</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </p-card>
+        </div>
+
+        <!-- Previous Employees Table -->
+        <div class="table-wrapper">
+            <p-card class="table-card">
+                <div class="card-header">
+                    <div class="header-content">
+                        <i class="pi pi-history header-icon"></i>
+                        <div class="header-text">
+                            <h2>Previous Employees</h2>
+                            <p class="subtitle">Past team members</p>
+                        </div>
+                    </div>
+                </div>
+                <p-table [value]="previousEmployees" [loading]="loading" [paginator]="true" [rows]="5"
+                    styleClass="p-datatable-striped p-datatable-sm" [showCurrentPageReport]="true"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th class="name-column">
+                                <i class="pi pi-user"></i>
+                                Name
+                            </th>
+                            <th class="role-column">
+                                <i class="pi pi-briefcase"></i>
+                                Role
+                            </th>
+                            <th class="date-column">
+                                <i class="pi pi-calendar"></i>
+                                From
+                            </th>
+                            <th class="date-column">
+                                <i class="pi pi-calendar"></i>
+                                To
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-employee>
+                        <tr>
+                            <td class="name-cell">
+                                <div class="employee-info">
+                                    <div class="employee-info-left">
+                                        <!-- <div class="avatar">{{ employee.name.charAt(0) }}</div> -->
+                                        <span class="employee-name" (click)="onEditEmployee(employee)">{{ employee.name }}</span>
+                                    </div>
+                                    <div class="delete-icon-wrapper">
+                                        <i class="pi pi-trash delete-icon" (click)="onDeleteEmployee(employee)"></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="mobile-label">Role</span>
+                                {{ employee.role }}
+                            </td>
+                            <td>
+                                <span class="mobile-label">Start Date</span>
+                                {{ employee.startDate | date:'mediumDate' }}
+                            </td>
+                            <td>
+                                <span class="mobile-label">End Date</span>
+                                {{ employee.endDate | date:'mediumDate' }}
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="4" class="text-center">
+                                <div class="empty-state">
+                                    <i class="pi pi-history empty-icon"></i>
+                                    <p>No previous employees found</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </p-card>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Floating Action Button -->
+<button pButton pRipple 
+    class="mobile-fab p-button-rounded p-button-primary" 
+    icon="pi pi-plus"
+    (click)="openAddEmployeeDialog()">
+</button>
+
+<p-toast position="top-right"></p-toast>
+<p-confirmDialog [style]="{width: '90vw', maxWidth: '450px'}"></p-confirmDialog>
