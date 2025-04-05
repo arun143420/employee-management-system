@@ -40,7 +40,6 @@
   font-size: 0.875rem;
 }
 
-
 .tables-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -431,7 +430,7 @@ tr:hover .delete-icon-wrapper {
 
   /* Add labels for mobile view */
   .mobile-label {
-    display: none;
+    display: block;
     font-weight: 600;
     color: #495057;
     margin-bottom: 0.5rem;
