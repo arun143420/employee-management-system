@@ -551,3 +551,16 @@ tr:hover .delete-icon-wrapper {
         gap: 0.5rem;
     }
 }
+
+.mobile-label {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-label {
+    display: block;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+  }
+}

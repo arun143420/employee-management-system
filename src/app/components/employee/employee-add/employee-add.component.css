@@ -94,6 +94,8 @@
 
 /* Calendar Footer Styles */
 ::ng-deep .calendar-footer {
+  display: flex;
+  justify-content: space-between;
   padding: 0.75rem;
   background: #f8f9fa;
   border-top: 1px solid #e9ecef;
@@ -102,8 +104,6 @@
 ::ng-deep .calendar-footer .selected-date {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
   color: #1e293b;
   font-size: 0.875rem;
 }
@@ -114,9 +114,9 @@
 
 ::ng-deep .calendar-footer .footer-actions {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   gap: 0.5rem;
-  margin-top: -2rem;
 }
 
 ::ng-deep .calendar-footer .p-button {
@@ -243,6 +243,7 @@
 @media (max-width: 768px) {
   .calendar-header {
     justify-content: space-between;
+    align-items: start;
   }
 }
 

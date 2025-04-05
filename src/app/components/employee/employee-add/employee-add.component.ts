@@ -56,7 +56,7 @@ export class EmployeeAddComponent implements OnInit {
     this.initializeComponent();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   private createForm(): FormGroup {
     return this.fb.group({
@@ -218,6 +218,18 @@ export class EmployeeAddComponent implements OnInit {
   }
 
   async onSubmit() {
+
+    if (this.employeeForm.get('startDate')?.value && this.employeeForm.get('endDate')?.value) {
+      if (this.employeeForm.get('startDate')?.value > this.employeeForm.get('endDate')?.value) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Start date cannot be greater than end date'
+        });
+        return;
+      }
+      
+    }
     if (this.employeeForm.valid) {
       const formValue = this.employeeForm.value;
       try {
@@ -269,13 +281,13 @@ export class EmployeeAddComponent implements OnInit {
 
   isToday(date: Date | null): boolean {
     if (!date) return false;
-    
+
     const today = new Date();
     const selected = new Date(date);
-    
+
     today.setHours(0, 0, 0, 0);
     selected.setHours(0, 0, 0, 0);
-    
+
     return today.getTime() === selected.getTime();
   }
 }
